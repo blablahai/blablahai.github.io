@@ -1,0 +1,208 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>首页</title>
+	<script>	
+		
+    function secondToDate(second) {
+        if (!second) {
+            return 0;
+        }
+        var time = new Array(0, 0, 0, 0, 0);
+        if (second >= 365 * 24 * 3600) {
+            time[0] = parseInt(second / (365 * 24 * 3600));
+            second %= 365 * 24 * 3600;
+        }
+        if (second >= 24 * 3600) {
+            time[1] = parseInt(second / (24 * 3600));
+            second %= 24 * 3600;
+        }
+        if (second >= 3600) {
+            time[2] = parseInt(second / 3600);
+            second %= 3600;
+        }
+        if (second >= 60) {
+            time[3] = parseInt(second / 60);
+            second %= 60;
+        }
+        if (second > 0) {
+            time[4] = second;
+        }
+        return time;
+    }
+    function setTime() {
+        /*此处为网站的创建时间*/
+        var create_time = Math.round(new Date(Date.UTC(2020, 03, 27, 16, 01, 01)).getTime() / 1000);
+        var timestamp = Math.round((new Date().getTime() + 8 * 60 * 60 * 1000) / 1000);
+        currentTime = secondToDate((timestamp - create_time));
+        currentTimeHtml = '我的小网站已苟活：' + currentTime[0] + '年' + currentTime[1] + '天'
+            + currentTime[2] + '时' + currentTime[3] + '分' + currentTime[4]
+            + '秒/0年360天0时0分';
+        document.getElementById("run_time").innerHTML = currentTimeHtml;
+    }
+    setInterval(setTime, 1000);
+
+    </script>
+	
+	
+	
+	
+	
+	<style>
+	
+		.gotop
+		{
+			position: fixed;
+			right: 20px;
+			bottom: 0px;
+			width: 100px;
+			height: 100px;
+		}
+		
+		body
+		{
+			background-color: #E1E1E1;
+			line-height: 1;
+		}
+		
+		.biaoqian
+		{
+			width: 100%;
+			height: auto;
+			position: relative;
+			background-color:#4D4D4D;
+			color: white;
+			font-size: 20px;
+			text-align: center;
+			font-family: 微软雅黑;
+			padding-bottom: 5px;
+		}
+		
+		.left_div
+		{
+			
+			margin-top: 30px;
+			float: left;
+			width: 60%;
+			height: auto;
+			margin-left: 0.5%;
+			background-color: #EBEBEB;
+			border-radius: 10px;
+			border: 1px solid #C4C4C4;
+			padding-top: 25px;
+		}
+		
+		.right_div
+		{
+			margin-top: 30px;
+			float: right;
+			width: 35%;
+			height: auto;
+			margin-left: 0.5%;
+			background-color: #EBEBEB;
+			border-radius: 10px;
+			border: 1px solid #C4C4C4;
+			padding-top: 15px;
+		}
+		
+		.biaoge
+		{
+			position: relative;
+			width: 95%;
+			height: 150px;
+			background-color: #FFFFFF;
+			text-align: left;
+			float: left;
+			border-radius: 5px;
+			margin-left: 22px;    /*左间距*/
+			margin-right: 22px;    /*右间距*/
+			margin-bottom: 30px;   /*下间距*/
+			box-shadow: darkgrey 5px 5px 35px 5px ;//边框阴影
+			padding-bottom: 5px;
+		}
+		
+		.foot
+		{
+			background-color: #4D4D4D;
+			width: 100%;
+			height: auto;
+			border-radius: 5px;
+			margin：0 auto;
+			padding-bottom: 15px;
+			padding-top: 15px;
+		}
+		
+		.font_biaoge
+		{
+			font-size: 18px;
+			font-family: 微软雅黑;
+			text-align: center;
+			color: #009BFF;
+		}
+		
+		.imgs_biaoge
+		{
+			width: auto;
+			padding-top: 5px;
+			height: 140px;
+			width: 265px;
+		}
+		
+		a 
+		{
+    		text-decoration:none;
+    		color:white;
+			font-size: 17px;
+			font-family: 微软雅黑;
+		}
+		
+	</style>
+	
+</head>
+
+<body>
+	
+	<a href="#top"><img class="gotop" src="https://pic.downk.cc/item/5e954923c2a9a83be5927102.png" alt="gotop"></a>
+	
+	<div class="biaoqian">
+		<span> <img src="https://pic.downk.cc/item/5ea7e2e4c2a9a83be5bd3b24.jpg" alt="" width="77" style="width: 60px;border-radius: 30px;float:left;margin-top: 10px;margin-left: 1%;"></span>
+		<br>
+		<span>
+			<span style="font-size: 23px;"><strong>欢迎来到首页</strong></span>
+			<span style="margin-right: 12%;float: right"><a href="http://blabla.dowy.cn/shouye.html" style="text-decoration:none;color: white">到首页</a></span>
+			<span style="float: right"><a href="http://haohao.dowy.cn/forum.php" style="text-decoration:none;color: white">到论坛&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></span>
+		</span>
+		<marquee class="gundong" scrollamount="12" style="font-size: 17px;padding-top: 5px;">公告：首页是新开的，会进一步完善更新，现在是边开放边更新😊</marquee>
+	</div>
+	
+	<div class="left_div">
+		<a href="http://blabla.dowy.cn/useful2.html">
+			<div class="biaoge">			
+				<p class="font_biaoge">你有没有因为只是注册一点不重要的东西，但却要手机号注册，又不想用你自己的手机号注册的烦恼呢？</p>
+				<p class="font_biaoge">用云短信吧，不仅仅只有这个，还有在线PS（麻麻，我再也不用下载PS了！）等等等等</p>
+				<p class="font_biaoge" style="color: red">具体去我做的另外一个网页了解吧（只要点击我就可以啦）</p>
+			</div>
+		</a>	
+		<a href="http://haohao.dowy.cn/forum.php">
+			<div class="biaoge">			
+				<p class="font_biaoge">论坛开放啦</p>
+				<p class="font_biaoge" style="color: red">快点击我去看看吧</p>
+			</div>
+		</a>
+	</div>
+	
+	<div class="right_div">
+		
+	</div>
+	
+	<marquee class="gundong" scrollamount="12"></marquee>
+	
+	<div class="foot">
+		<p><center><script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278868281'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1278868281%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script></center></p> <!--统计-->
+		
+		<p id="run_time" style="text-align: center;font-size: 18px;color: white;font-family: 微软雅黑;"></p>
+	</div>
+	
+</body>
+</html>
